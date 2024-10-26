@@ -1,6 +1,6 @@
 zsh_theme=""
 	PROMPT='
-%K{red}JiAyiX%k
+%B%K{red}JiAyiX%k%b
 %B┌─[%F{yellow}Ruta: %~%f] [%F{green}Red: $(get_ip_address)%f]%b $(git_prompt_info)
 %B└─➜%b '
 
