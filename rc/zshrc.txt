@@ -1,23 +1,40 @@
 zsh_theme=""
 	PROMPT='
 %K{red}JiAyiX%k
-┌─[%B%F{yellow}Ruta: %~%f%b] [%B%F{green}Red: $(get_ip_address)%f%b] $(git_prompt_info)
+┌─%B[%F{yellow}Ruta: %~%f] [%F{green}Red: $(get_ip_address)%f]%b $(git_prompt_info)
 └─➜ '
 
 RPROMPT='[%B%F{blue}%*%f%b]'
 
 get_ip_address() {
   if [[ -n "$(ifconfig tun0 2>/dev/null)" ]]; then
-    echo "%{$fg[green]%}$(ifconfig tun0 | awk '/inet / {print $2}')%{$reset_color%}"
+    # VPN
+    echo "%{$fg[green]%}$(ifconfig tun0 | awk '/inet / {print $2}') (VPN)%{$reset_color%}"
+  elif [[ -n "$(ifconfig eth0 2>/dev/null)" ]]; then
+    # Ethernet
+    echo "%{$fg[green]%}$(ifconfig eth0 | awk '/inet / {print $2}') (Cable)%{$reset_color%}"
   elif [[ -n "$(ifconfig wlan0 2>/dev/null)" ]]; then
-    echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}')%{$reset_color%}"
+    # Wi-Fi
+    echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}') (Wi-Fi)%{$reset_color%}"
   elif [[ -n "$(ifconfig wlp3s0 2>/dev/null)" ]]; then
-    echo "%{$fg[green]%}$(ifconfig wlp3s0 | awk '/inet / {print $2}')%{$reset_color%}"
+    # Wi-Fi (otra interfaz común)
+    echo "%{$fg[green]%}$(ifconfig wlp3s0 | awk '/inet / {print $2}') (Wi-Fi)%{$reset_color%}"
+  elif [[ -n "$(ifconfig enp0s3 2>/dev/null)" ]]; then
+    # Adaptador puente de VirtualBox
+    echo "%{$fg[green]%}$(ifconfig enp0s3 | awk '/inet / {print $2}') (Cable-VirtualBox)%{$reset_color%}"
+  elif [[ -n "$(ifconfig enp0s8 2>/dev/null)" ]]; then
+    # Otra configuración de adaptador puente de VirtualBox
+    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}') (Cable-VirtualBox)%{$reset_color%}"
+    # NAT de VirtualBox o Adaptador Puente
+    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}') (NAT-VirtualBox)%{$reset_color%}"
+  elif [[ -n "$(ifconfig enp0s9 2>/dev/null)" ]]; then
+    # Otra posible NAT de VirtualBox
+    echo "%{$fg[green]%}$(ifconfig enp0s9 | awk '/inet / {print $2}') (NAT-VirtualBox)%{$reset_color%}"
   else
+    # Sin conexión IP
     echo "%{$fg[red]%}No IP%{$reset_color%}"
   fi
 }
-
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -37,7 +54,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
