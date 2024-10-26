@@ -59,7 +59,7 @@ echo "${Null}"
 case $num in
 	1) #Terminal
 		sudo apt install gnome-tweaks
-		sudo apt update && sudo apt upgrade gnome-tweaks
+		sudo apt update && sudo apt upgrade gnome-tweaks -y
 		sudo cp -rfv skin/tema_JiAyi /usr/share/themes && sudo cp -rfv skin/cursor_JiAyi /usr/share/icons
 		gnome-tweaks;;
 
@@ -77,7 +77,7 @@ case $num in
 		echo "${Null}";;
 	4) #Personalización Zsh
 		sudo apt install git
-		sudo apt update && sudo apt upgrade git
+		sudo apt update && sudo apt upgrade git -y
 		while true
 		do
 		clear
