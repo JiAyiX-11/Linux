@@ -68,7 +68,7 @@ case $num in
 		sudo apt install net-tools
 		sudo apt install exa || sudo snap install lsd
 		sudo apt install curl || sudo apt install wget
-		sudo apt update && sudo apt upgrade;;
+		sudo apt update && sudo apt upgrade -y;;
 
 	3) #Personalización Bash
 		cat rc/bashrc.txt > ~/.bashrc
