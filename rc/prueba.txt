@@ -157,12 +157,12 @@ clean_history() {
 clean_history
 
 
-# Manual aliases
+# lsd
 alias ll='lsd -lah --group-dirs=first'
 alias l='lsd -l --group-dirs=first'
-alias cat='batcat'
-alias catn='cat'
-alias catnl='batcat --paging=never'
+
+# cat
+alias cat='batcat --paging=never'
 
 #grep
 alias egrep='egrep --color=auto'
