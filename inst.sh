@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Colores de texto
 Negro='\033[0;30m'
 Rojo='\033[0;31m'
