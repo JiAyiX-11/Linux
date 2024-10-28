@@ -98,12 +98,12 @@ case $num in
 		echo -e "${Null}"
 		case $num1 in 
 			1) #Instalar Zsh
-				echo -e "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!                        IMPORTANTE!!!                           "
-				echo -e "                                                                                                              "
-				echo -e "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR EL SCRIPT DE NUEVO Y AÑADIR LOS PLUGINS              "
-				echo -e "                                                                                                              "
-				echo -e "                                                                                                              "
-				echo -e "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                           ${Null}"
+				echo -e "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!              "
+				echo -e "                                                             "                
+				echo -e "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR     "
+				echo -e "     EL SCRIPT NUEVAMENTE.                                   "
+				echo -e "                                                             "
+				echo -e "   IMPORTANTE!!!                    IMPORTANTE!!!            ${Null}"
 				read -p "Pulsa una tecla para continuar. " basura
 
 				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";;
