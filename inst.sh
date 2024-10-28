@@ -67,6 +67,7 @@ case $num in
 		sudo apt install tree
 		sudo apt install net-tools
 		sudo snap install lsd
+  		sudo apt install bat
 		sudo apt install curl || sudo apt install wget
 		sudo apt update && sudo apt upgrade -y;;
 
