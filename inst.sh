@@ -94,12 +94,12 @@ case $num in
 		echo "${Null}"
 		case $num1 in 
 			1) #Instalar Zsh
-				echo "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!                        IMPORTANTE!!!                            IMPORTANTE!!!                "
-				echo "                                                                                                                                             "
-				echo "     EN LA INSTALACIÓN DEL ZSH TE PREGUNTARÁN SI QUIERES QUE ZSH SEA COMO EL SHELL PRINCIPAL Y UNA VEZ TERRMINADO SE TERMINARÁ EL SCRIPTS    "
-				echo "     POR LO QUE DEBERÁ VOLVER A ABRIR EL SCRIPTS Y AÑADIR LOS PLUGGINS.                                                                      "
-				echo "                                                                                                                                             "
-				echo "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                                    IMPORTANTE!!!         ${Null}"
+				echo "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!                        IMPORTANTE!!!                           "
+				echo "                                                                                                              "
+				echo "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR EL SCRIPT DE NUEVO Y AÑADIR LOS PLUGINS              "
+				echo "                                                                                                              "
+				echo "                                                                                                              "
+				echo "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                           ${Null}"
 				read -p "Pulsa una tecla para continuar. " basura
 
 				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";;
