@@ -38,7 +38,7 @@ get_ip_address() {
 
 
 # TTY con mis colores
- source ~/.cache/wal/colors-tty.sh
+#source ~/.cache/wal/colors-tty.sh
 
 
 # Ruta de Instalación de Oh-My-Zsh
@@ -105,8 +105,6 @@ plugins=(git
 	 alias-finder)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # Lenguaje
@@ -160,14 +158,14 @@ clean_history
 
 
 # Manual aliases
-alias ll='/usr/bin/lsd -lh --group-dirs=first'
-alias la='/usr/bin/lsd -a --group-dirs=first'
-alias l='/usr/bin/lsd --group-dirs=first'
-alias lla='/usr/bin/lsd -lha --group-dirs=first'
-alias ls='/usr/bin/lsd --group-dirs=first'
-alias cat='/usr/bin/batcat'
-alias catn='/usr/bin/cat'
-alias catnl='/usr/bin/batcat --paging=never'
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias ls='lsd --group-dirs=first'
+alias cat='batcat'
+alias catn='cat'
+alias catnl='batcat --paging=never'
 
 #grep
 alias egrep='egrep --color=auto'
