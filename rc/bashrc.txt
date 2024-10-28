@@ -201,16 +201,12 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-#exa
-alias ls='exa  --icons'
-alias l='exa  --icons -l'
-alias ll='exa -lbhHFGmuSa --group-directories-first'
-alias lt='exa --tree --icons'
+# lsd
+alias ll='lsd -lah --group-dirs=first'
+alias l='lsd -l --group-dirs=first'
 
-#lsd
-#alias ls='lsd'
-#alias l='lsd -l'
-#alias ll='lsd -la'
+# cat
+alias cat='batcat --paging=never'
 
 #grep
 alias egrep='egrep --color=auto'
