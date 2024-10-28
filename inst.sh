@@ -66,7 +66,7 @@ case $num in
 	2) #Instalación de Paquetes y Actualizar
 		sudo apt install tree
 		sudo apt install net-tools
-		sudo apt install exa || sudo snap install lsd
+		sudo snap install lsd
 		sudo apt install curl || sudo apt install wget
 		sudo apt update && sudo apt upgrade -y;;
 
@@ -102,7 +102,7 @@ case $num in
 				echo "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                                    IMPORTANTE!!!         ${Null}"
 				read -p "Pulsa una tecla para continuar. " basura
 
-				sh/./ohmyzsh.sh;;
+				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";;
 			2) #Pluggins
 				git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 				git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
