@@ -158,11 +158,8 @@ clean_history
 
 
 # Manual aliases
-alias ll='lsd -lh --group-dirs=first'
-alias la='lsd -a --group-dirs=first'
-alias l='lsd --group-dirs=first'
-alias lla='lsd -lha --group-dirs=first'
-alias ls='lsd --group-dirs=first'
+alias ll='lsd -lah --group-dirs=first'
+alias l='lsd -l --group-dirs=first'
 alias cat='batcat'
 alias catn='cat'
 alias catnl='batcat --paging=never'
