@@ -43,19 +43,19 @@ Null='\033[0m'
 while true
 do
 clear
-echo "${BlancoBg}                                                ${Null}"
-echo "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
-echo "${BlancoBg}                                                ${Null}"
-echo "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
-echo "          2. Paquetes Terceros                  "
-echo "          3. Bash.                              "
-echo "          4. Zsh.                               "
-echo "          5. Salir.                             "
-echo "                                                "
-echo "                                                ${Null}"
-echo "${AMARILLO}"
+echo -e "${BlancoBg}                                                ${Null}"
+echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
+echo -e "${BlancoBg}                                                ${Null}"
+echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
+echo -e "          2. Paquetes Terceros                  "
+echo -e "          3. Bash.                              "
+echo -e "          4. Zsh.                               "
+echo -e "          5. Salir.                             "
+echo -e "                                                "
+echo -e "                                                ${Null}"
+echo -e "${AMARILLO}"
 read -p "Opción a Realizar: " num
-echo "${Null}"
+echo -e "${Null}"
 case $num in
 	1) #Terminal
 		sudo apt install gnome-tweaks
@@ -73,34 +73,34 @@ case $num in
 
 	3) #Personalización Bash
 		cat rc/bashrc.txt > ~/.bashrc
-		echo "${VERDE}"
+		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
-		echo "${Null}";;
+		echo -e "${Null}";;
 	4) #Personalización Zsh
 		sudo apt install git
 		sudo apt update && sudo apt upgrade git -y
 		while true
 		do
 		clear
-		echo "${BlancoBg}                                                ${Null}"
-		echo "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
-		echo "${BlancoBg}                                                ${Null}"
-		echo "${NEGRO}${BlancoBg}          1. Instalar Zsh                       "
-		echo "          2. Pluggins                           "
-		echo "          3. Salir.                             "
-		echo "                                                "
-		echo "                                                ${Null}"
-		echo "${AMARILLO}"
+		echo -e "${BlancoBg}                                                ${Null}"
+		echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
+		echo -e "${BlancoBg}                                                ${Null}"
+		echo -e "${NEGRO}${BlancoBg}          1. Instalar Zsh                       "
+		echo -e "          2. Pluggins                           "
+		echo -e "          3. Salir.                             "
+		echo -e "                                                "
+		echo -e "                                                ${Null}"
+		echo -e "${AMARILLO}"
 		read -p "Opción a Realizar: " num1
-		echo "${Null}"
+		echo -e "${Null}"
 		case $num1 in 
 			1) #Instalar Zsh
-				echo "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!                        IMPORTANTE!!!                           "
-				echo "                                                                                                              "
-				echo "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR EL SCRIPT DE NUEVO Y AÑADIR LOS PLUGINS              "
-				echo "                                                                                                              "
-				echo "                                                                                                              "
-				echo "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                           ${Null}"
+				echo -e "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!                        IMPORTANTE!!!                           "
+				echo -e "                                                                                                              "
+				echo -e "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR EL SCRIPT DE NUEVO Y AÑADIR LOS PLUGINS              "
+				echo -e "                                                                                                              "
+				echo -e "                                                                                                              "
+				echo -e "   IMPORTANTE!!!                    IMPORTANTE!!!                     IMPORTANTE!!!                           ${Null}"
 				read -p "Pulsa una tecla para continuar. " basura
 
 				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";;
