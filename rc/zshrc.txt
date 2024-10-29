@@ -99,7 +99,6 @@ plugins=(git
 	 colored-man-pages	
 	 sudo
 	 docker
-	 fzf
 	 history-substring-search
 	 alias-finder)
 
