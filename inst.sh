@@ -52,7 +52,8 @@ echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
 echo -e "          2. Paquetes Terceros                  "
 echo -e "          3. Bash.                              "
 echo -e "          4. Zsh.                               "
-echo -e "          5. Salir.                             "
+echo -e "          5. Tema_bspwn.                        "
+echo -e "          6. Salir.                             "
 echo -e "                                                "
 echo -e "                                                ${Null}"
 echo -e "${AMARILLO}"
@@ -120,7 +121,13 @@ case $num in
 		esac
 		done;;
 
-	5) #Salir
+	5) #bspwn
+ 		git clone https://github.com/r1vs3c/auto-bspwm.git
+   		cd /home/$(whoami)/auto-bspwm
+     		sudo chmod *.sh
+       		./setup.sh
+
+	6) #Salir
 		break;;
 
 esac
