@@ -125,7 +125,7 @@ case $num in
  		git clone https://github.com/r1vs3c/auto-bspwm.git
    		cd /home/$(whoami)/auto-bspwm
      		sudo chmod *.sh
-       		./setup.sh
+       		./setup.sh;;
 
 	6) #Salir
 		break;;
