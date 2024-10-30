@@ -68,7 +68,7 @@ case $num in
 	2) #Instalación de Paquetes y Actualizar
 		sudo apt install tree -y
 		sudo apt install net-tools -y
-		sudo snap install lsd 
+		sudo apt install exa
   		sudo apt install bat -y
 		sudo apt install curl -y
   		sudo apt install wget -y
