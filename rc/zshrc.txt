@@ -155,9 +155,9 @@ clean_history() {
 clean_history
 
 
-# lsd
-alias ll='lsd -lah --group-dirs=first'
-alias l='lsd -l --group-dirs=first'
+# exa
+alias ll='exa -lhgHaF --colour=always --icons --group-directories-first'
+alias l='exa -lhgHF --colour=always --icons --group-directories-first '
 
 # cat
 alias cat='batcat --paging=never'
