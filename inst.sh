@@ -69,64 +69,36 @@ case $num in
 	2) #Instalación de Paquetes y Actualizar
 		sudo apt install tree -y
 		sudo apt install net-tools -y
-		sudo apt install exa
+		sudo apt install exa -y
   		sudo apt install bat -y
 		sudo apt install curl -y
-  		sudo apt install wget -y
-		sudo apt update && sudo apt upgrade -y;;
+  		sudo apt install wget -y;;
 
 	3) #Personalización Bash
 		cat rc/bashrc.txt > ~/.bashrc
 		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
+  
 	4) #Personalización Zsh
-		sudo apt install git -y
-		sudo apt update && sudo apt upgrade git -y
-		while true
-		do
-		clear
-		echo -e "${BlancoBg}                                                ${Null}"
-		echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
-		echo -e "${BlancoBg}                                                ${Null}"
-		echo -e "${NEGRO}${BlancoBg}          1. Instalar Zsh                       "
-		echo -e "          2. Pluggins                           "
-		echo -e "          3. Salir.                             "
-		echo -e "                                                "
-		echo -e "                                                ${Null}"
-		echo -e "${AMARILLO}"
-		read -p "Opción a Realizar: " num1
-		echo -e "${Null}"
-		case $num1 in 
-			1) #Instalar Zsh
-				echo -e "${ROJO}${NegroBg}   IMPORTANTE!!!                  IMPORTANTE!!!              "
-				echo -e "                                                             "                
-				echo -e "     SE INTERRUMPIRÁ EL SCRIPT POR LO QUE SEBERÁ INICIAR     "
-				echo -e "     EL SCRIPT NUEVAMENTE.                                   "
-				echo -e "                                                             "
-				echo -e "   IMPORTANTE!!!                    IMPORTANTE!!!            ${Null}"
-				read -p "Pulsa una tecla para continuar. " basura
-
-				sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";;
-			2) #Pluggins
-				git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-				git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-				git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-				git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-				git clone https://github.com/zdharma-continuum/alias-finder ~/.oh-my-zsh/custom/plugins/alias-finder
-				cat rc/zshrc.txt > ~/.zshrc;;
-
-			3) #SalirZsh
-				break;;
-		esac
-		done;;
-
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+		git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+		git clone https://github.com/zdharma-continuum/alias-finder ~/.oh-my-zsh/custom/plugins/alias-finder
+		cat rc/zshrc.txt > ~/.zshrc
+  		echo -e "${VERDE}"
+		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
+		echo -e "${Null}";;
+  
 	5) #bspwn
- 		git clone https://github.com/r1vs3c/auto-bspwm.git
-   		cd /home/$(whoami)/auto-bspwm
-     		sudo chmod *.sh
-       		./setup.sh;;
-
+#		git clone https://github.com/r1vs3c/auto-bspwm.git
+# 		cd /home/$(whoami)/auto-bspwm
+#     		sudo chmod *.sh
+#       		./setup.sh
+  		echo -e "${ROJO}"
+		read -p "  NO DISPONIBLE. Toca caunquier tecla para continuar:" basura
+		echo -e "${Null}";;
 	6) #Salir
 		break;;
 
