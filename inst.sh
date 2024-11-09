@@ -398,7 +398,7 @@ EOF
   setup_ohmyzsh
   setup_zshrc
   setup_shell
-  JiAyiX/./inst.sh
+  jiayi.sh
 
 #  if [ $RUNZSH = no ]; then
 #    echo "${FMT_YELLOW}Run zsh to try it out.${FMT_RESET}"
