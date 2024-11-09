@@ -63,7 +63,7 @@ case $num in
 	1) #Terminal
 		sudo apt install gnome-tweaks -y
 		sudo apt update && sudo apt upgrade gnome-tweaks -y
-		sudo cp -rfv skin/tema_JiAyi /usr/share/themes && sudo cp -rfv skin/cursor_JiAyi /usr/share/icons
+		sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons
 		gnome-tweaks;;
 
 	2) #Instalación de Paquetes y Actualizar
@@ -75,7 +75,7 @@ case $num in
   		sudo apt install wget -y;;
 
 	3) #Personalización Bash
-		cat rc/bashrc.txt > ~/.bashrc
+		cat JiAyiX/rc/bashrc.txt > ~/.bashrc
 		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
@@ -86,7 +86,7 @@ case $num in
 		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 		git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 		git clone https://github.com/zdharma-continuum/alias-finder ~/.oh-my-zsh/custom/plugins/alias-finder
-		cat rc/zshrc.txt > ~/.zshrc
+		cat JiAyiX/rc/zshrc.txt > ~/.zshrc
   		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
