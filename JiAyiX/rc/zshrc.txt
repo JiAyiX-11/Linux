@@ -158,7 +158,7 @@ clean_history
 # exa
 alias ll='exa -lhgHaF --colour=always --icons --group-directories-first'
 alias l='exa -lhgHF --colour=always --icons --group-directories-first'
-alias lt='exa --long --tree --icons --group-directories-first'
+alias lt='exa --long --tree --colour=always --icons --group-directories-first'
 
 # cat
 alias cat='batcat --paging=never'
