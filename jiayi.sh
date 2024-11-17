@@ -69,10 +69,11 @@ case $num in
 	2) #Instalación de Paquetes y Actualizar
 		sudo apt install tree -y
 		sudo apt install net-tools -y
-		sudo apt install exa -y
   		sudo apt install bat -y
 		sudo apt install curl -y
-  		sudo apt install wget -y;;
+  		sudo apt install wget -y
+		sudo cp -rfv JiAyiX/exa /usr/local/bin/;;
+
 
 	3) #Personalización Bash
 		cat JiAyiX/rc/bashrc.txt > ~/.bashrc
