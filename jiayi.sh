@@ -49,7 +49,7 @@ echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
 echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
-echo -e "          2. Paquetes Terceros                  "
+echo -e "          2. Paquetes OBLIGATORI                "
 echo -e "          3. Bash.                              "
 echo -e "          4. Zsh.                               "
 echo -e "          5. Atajos GNOME.                      "
@@ -101,7 +101,9 @@ case $num in
 		dconf load /org/gnome/desktop/input-sources/ < JiAyiX/atajos/teclado.txt
 		# Restaurar configuraciones del terminal de GNOME
 		dconf load /org/gnome/terminal/ < JiAyiX/atajos/atajos_terminal.txt
-		echo -e "${VERDE}Restauraciones completadas: Atajos teclado, fuentes de entrada, atajos Terminal${Null}";;
+  		echo -e "${VERDE}"
+		read -p "Restauraciones completadas: Atajos teclado, fuentes de entrada, atajos Terminal" basura
+		echo -e "${Null}";;
 
 	6) #Salir
 		break;;
