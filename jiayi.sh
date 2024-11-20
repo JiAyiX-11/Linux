@@ -52,7 +52,7 @@ echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
 echo -e "          2. Paquetes Terceros                  "
 echo -e "          3. Bash.                              "
 echo -e "          4. Zsh.                               "
-echo -e "          5. Tema_bspwn.                        "
+echo -e "          5. Atajos GNOME.                      "
 echo -e "          6. Salir.                             "
 echo -e "                                                "
 echo -e "                                                ${Null}"
@@ -93,15 +93,16 @@ case $num in
   		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
-  
-	5) #bspwn
-#		git clone https://github.com/r1vs3c/auto-bspwm.git
-# 		cd /home/$(whoami)/auto-bspwm
-#     		sudo chmod *.sh
-#       		./setup.sh
-  		echo -e "${ROJO}"
-		read -p "  NO DISPONIBLE. Toca caunquier tecla para continuar:" basura
-		echo -e "${Null}";;
+
+	5) #Atajos
+		# Restaurar atajos de teclado
+		dconf load /org/gnome/settings-daemon/plugins/media-keys/ < JiAyiX/atajos/atajos_configuracion.txt
+		# Restaurar configuraciones de fuentes de entrada
+		dconf load /org/gnome/desktop/input-sources/ < JiAyiX/atajos/teclado.txt
+		# Restaurar configuraciones del terminal de GNOME
+		dconf load /org/gnome/terminal/ < JiAyiX/atajos/atajos_terminal.txt
+		echo -e "${VERDE}Restauraciones completadas: Atajos teclado, fuentes de entrada, atajos Terminal${Null}";;
+
 	6) #Salir
 		break;;
 

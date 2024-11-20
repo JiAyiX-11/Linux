@@ -1,0 +1,4 @@
+[/]
+mru-sources=[('xkb', 'es'), ('xkb', 'cn')]
+show-all-sources=true
+sources=[('xkb', 'es'), ('xkb', 'cn')]

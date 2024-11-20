@@ -1,0 +1,15 @@
+[legacy]
+new-terminal-mode='window'
+theme-variant='dark'
+
+[legacy/keybindings]
+close-tab='<Alt>w'
+copy='<Alt>c'
+find='<Alt>b'
+new-tab='<Alt>t'
+new-window='<Alt>n'
+next-tab='<Alt>Right'
+paste='<Alt>v'
+preferences='<Alt>p'
+prev-tab='<Alt>Left'
+select-all='<Alt>a'

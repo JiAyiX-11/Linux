@@ -1,0 +1,11 @@
+[/]
+control-center=['<Super>i']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+home=['<Super>e']
+search=['<Super>b']
+www=['<Super>f']
+
+[custom-keybindings/custom1]
+binding='<Control><Alt>t'
+command='gnome-terminal'
+name='Terminal'
