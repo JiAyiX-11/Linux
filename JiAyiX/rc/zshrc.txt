@@ -191,7 +191,10 @@ alias apagar='shutdown now'
 alias so='lsb_release -a'
 alias mk='mkdir -pv'
 alias chmod='sudo chmod'
-alias rm='sudo rm -dfri'
+alias rm='sudo rm -dfriv'
+alias mv='mv -v'
+alias ..='cd ..'
+alias .='cd -'
 
 
 # Funciones
