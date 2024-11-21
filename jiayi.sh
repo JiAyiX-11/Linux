@@ -64,6 +64,7 @@ case $num in
 		sudo apt install gnome-tweaks -y
 		sudo apt update && sudo apt upgrade gnome-tweaks -y
 		sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons
+		sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes
 		gnome-tweaks;;
 
 	2) #Instalación de Paquetes y Actualizar
