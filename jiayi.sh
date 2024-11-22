@@ -97,12 +97,6 @@ case $num in
 
 	5) #Atajos
 		dconf load / < JiAyiX/atajos/atajos.txt
-		# Restaurar atajos de teclado
-#		dconf load /org/gnome/settings-daemon/plugins/media-keys/ < JiAyiX/atajos/atajos_configuracion.txt
-		# Restaurar configuraciones de fuentes de entrada
-#		dconf load /org/gnome/desktop/input-sources/ < JiAyiX/atajos/teclado.txt
-		# Restaurar configuraciones del terminal de GNOME
-#		dconf load /org/gnome/terminal/ < JiAyiX/atajos/atajos_terminal.txt
   		echo -e "${VERDE}"
 		read -p "Atajos completados." basura
 		echo -e "${Null}";;
