@@ -174,7 +174,7 @@ alias cat='batcat --paging=never'
 #grep
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -in'
 
 #comprimir
 alias comprimir='tar -cfv'

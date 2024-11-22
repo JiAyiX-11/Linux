@@ -34,7 +34,7 @@ primary-color='#000000000000'
 secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
-mru-sources=[('xkb', 'cn'), ('xkb', 'es')]
+mru-sources=[('xkb', 'es'), ('xkb', 'cn')]
 show-all-sources=true
 sources=[('xkb', 'es'), ('xkb', 'cn')]
 
@@ -149,7 +149,7 @@ command='mousepad'
 name='Editor de Texto'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>p'
+binding='<Super>Escape'
 command='systemctl poweroff'
 name='Apagar'
 
@@ -201,6 +201,9 @@ show-trash=true
 show-windows-preview=true
 transparency-mode='FIXED'
 workspace-agnostic-urgent-windows=true
+
+[org/gnome/shell/extensions/system-monitor]
+show-swap=false
 
 [org/gnome/shell/extensions/tiling-assistant]
 active-window-hint-color='rgb(28,113,216)'
