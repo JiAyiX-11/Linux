@@ -49,7 +49,7 @@ echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
 echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
-echo -e "          2. Paquetes OBLIGATORI                "
+echo -e "          2. Paquetes OBLIGATORI0               "
 echo -e "          3. Bash.                              "
 echo -e "          4. Zsh.                               "
 echo -e "          5. Atajos GNOME.                      "
@@ -96,14 +96,15 @@ case $num in
 		echo -e "${Null}";;
 
 	5) #Atajos
+		dconf load / < JiAyiX/atajos/atajos.txt
 		# Restaurar atajos de teclado
-		dconf load /org/gnome/settings-daemon/plugins/media-keys/ < JiAyiX/atajos/atajos_configuracion.txt
+#		dconf load /org/gnome/settings-daemon/plugins/media-keys/ < JiAyiX/atajos/atajos_configuracion.txt
 		# Restaurar configuraciones de fuentes de entrada
-		dconf load /org/gnome/desktop/input-sources/ < JiAyiX/atajos/teclado.txt
+#		dconf load /org/gnome/desktop/input-sources/ < JiAyiX/atajos/teclado.txt
 		# Restaurar configuraciones del terminal de GNOME
-		dconf load /org/gnome/terminal/ < JiAyiX/atajos/atajos_terminal.txt
+#		dconf load /org/gnome/terminal/ < JiAyiX/atajos/atajos_terminal.txt
   		echo -e "${VERDE}"
-		read -p "Restauraciones completadas: Atajos teclado, fuentes de entrada, atajos Terminal" basura
+		read -p "Atajos completados." basura
 		echo -e "${Null}";;
 
 	6) #Salir
