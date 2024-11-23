@@ -75,6 +75,7 @@ case $num in
   		sudo apt install wget -y
     		sudo apt install figlet -y
       		sudo apt install lolcat -y
+		sudo apt install neofetch -y
 		sudo cp -rfv JiAyiX/exa /usr/local/bin/;;
 
 
