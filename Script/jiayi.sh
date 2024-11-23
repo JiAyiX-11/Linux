@@ -118,3 +118,5 @@ case $num in
 esac
 done
 clear
+figlet -f slant "JiAyiX" -c | lolcat
+echo -e "Ejecute:  ${MORADO}source ~/.zshrc  ${Null} para actualizar la configuración."
