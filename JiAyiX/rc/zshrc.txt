@@ -44,10 +44,6 @@ get_ip_address() {
 }
 
 
-# TTY con mis colores
-#source ~/.cache/wal/colors-tty.sh
-
-
 # Ruta de Instalación de Oh-My-Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
