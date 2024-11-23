@@ -55,7 +55,6 @@ echo -e "          4. Zsh.                               "
 echo -e "          5. Atajos GNOME.                      "
 echo -e "          6. Idioma.                            "
 echo -e "          7. Editor Nano.                       "
-echo -e "                                                "
 echo -e "          *. Salir.                             "
 echo -e "                                                "
 echo -e "                                                ${Null}"
@@ -115,11 +114,9 @@ case $num in
 
 
 	7) # Nano
-		sudo cp -f JiAyiX/rc/nanorc.txt /etc/nanorc
-		echo -e "Las Copias de Seguridad se guardarán en:  ${MORADO}/var/tmp${Null}"
-		echo -e "${VERDE}"
-		read -p "Toca cyalquier tecla para continuar:" basura
-		echo -e "${Null}";;
+		sudo cp -fv JiAyiX/rc/nanorc.txt /etc/nanorc
+		read -p "" basura;;
+
 
 	*) #Salir
 		break;;
