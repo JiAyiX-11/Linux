@@ -49,7 +49,7 @@ echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
 echo -e "${BlancoBg}                                                ${Null}"
 echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
-echo -e "          2. Paquetes OBLIGATORI0               "
+echo -e "          2. Paquetes OBLIGATORIO               "
 echo -e "          3. Bash.                              "
 echo -e "          4. Zsh.                               "
 echo -e "          5. Atajos GNOME.                      "
@@ -67,6 +67,7 @@ case $num in
 		sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes
 		gnome-tweaks;;
 
+
 	2) #Instalación de Paquetes y Actualizar
 		sudo apt install tree -y
 		sudo apt install net-tools -y
@@ -76,7 +77,8 @@ case $num in
     		sudo apt install figlet -y
       		sudo apt install lolcat -y
 		sudo apt install neofetch -y
-		sudo cp -rfv JiAyiX/exa /usr/local/bin/;;
+		sudo cp -rfv JiAyiX/exa /usr/local/bin/
+		./superfile.sh;;
 
 
 	3) #Personalización Bash
@@ -84,7 +86,8 @@ case $num in
 		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
-  
+
+
 	4) #Personalización Zsh
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -95,6 +98,7 @@ case $num in
   		echo -e "${VERDE}"
 		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
 		echo -e "${Null}";;
+
 
 	5) #Atajos
 		dconf load / < JiAyiX/atajos/atajos.txt

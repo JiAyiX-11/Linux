@@ -189,8 +189,9 @@ alias mk='mkdir -pv'
 alias chmod='sudo chmod'
 alias rm='sudo rm -dfriv'
 alias mv='mv -v'
-alias ..='cd ..'
-alias .='cd -'
+alias .='cd ..'
+alias ..='cd -'
+alias f='spf'
 
 
 # Funciones
