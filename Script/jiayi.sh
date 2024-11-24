@@ -68,6 +68,8 @@ case $num in
 		sudo apt update && sudo apt upgrade gnome-tweaks -y
 		sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons
 		sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes
+  		sudo cp -rfv ../Fondos/*.* ~/Imágenes || sudo cp -rfv ../Fondos/*.* ~/Image
+
 		gnome-tweaks;;
 
 
