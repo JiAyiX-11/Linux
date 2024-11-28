@@ -39,9 +39,10 @@ Null='\033[0m'
 
 
 inst_gnome() {
-	sudo apt install -y kali-desktop-gnome
+	sudo apt install -y kali-desktop-gnome 
 	sudo apt install -y gdm3
 	sudo dpkg-reconfigure gdm3
+ 	sudo apt install -y \ gnome-tweaks \ gnome-shell-extensions \ chrome-gnome-shell \ dconf-editor 
 	sudo update-alternatives --config x-session-manager
 }
 
@@ -54,7 +55,6 @@ obligatorio() {
     sudo apt install figlet -y
     sudo apt install lolcat -y
 	sudo apt install neofetch -y
-	sudo apt install gnome-tweaks -y
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
 }
 
