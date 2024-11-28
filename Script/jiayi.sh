@@ -42,7 +42,10 @@ inst_gnome() {
 	sudo apt install -y kali-desktop-gnome 
 	sudo apt install -y gdm3
 	sudo dpkg-reconfigure gdm3
- 	sudo apt install -y \ gnome-tweaks \ gnome-shell-extensions \ chrome-gnome-shell \ dconf-editor 
+ 	sudo apt install gnome-tweaks -y
+  	sudo apt install gnome-terminal -y
+   	sudo apt install gnome-shell-extensions -y
+    	sudo apt install dconf-editor -y
 	sudo update-alternatives --config x-session-manager
 }
 
