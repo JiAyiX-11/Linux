@@ -103,7 +103,6 @@ fin() {
 # Instalar los Paquetes Necesarios.
 obligatorio
 
-
 # Instalar GNOME como Interfáz Gráfica.
 inst_gnome
 
@@ -112,6 +111,9 @@ mover
 
 # plugin de zsh y personalización de JiAyiX
 zsh
+
+# Gnome-Terminal
+gnome-tweaks
 
 # Reiniciar
 fin
