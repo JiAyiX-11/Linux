@@ -8,7 +8,7 @@ fi
 # Tema zsh
 zsh_theme=""
 	PROMPT='
-%B┌─[%F{red}($(whoami))%f%F{yellow}Ruta:%~%f] [%F{green}Red:$(get_ip_address)%f%B]%b $(git_prompt_info)
+%B┌─[%F{red}($(whoami))%f%F{yellow}Ruta: %~%f] [%F{green}Red: $(get_ip_address)%f%B]%b $(git_prompt_info)
 %B└─➜%b '
 
 RPROMPT='[%B%F{blue}%*%f%b]'
@@ -16,27 +16,27 @@ RPROMPT='[%B%F{blue}%*%f%b]'
 get_ip_address() {
   if [[ -n "$(ifconfig tun0 2>/dev/null)" ]]; then
     # VPN
-    echo "%{$fg[green]%}$(ifconfig tun0 | awk '/inet / {print $2}') (VPN)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig tun0 | awk '/inet / {print $2}')(VPN)%{$reset_color%}"
   elif [[ -n "$(ifconfig eth0 2>/dev/null)" ]]; then
     # Ethernet
-    echo "%{$fg[green]%}$(ifconfig eth0 | awk '/inet / {print $2}') (Cable)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig eth0 | awk '/inet / {print $2}')(Cable)%{$reset_color%}"
   elif [[ -n "$(ifconfig wlan0 2>/dev/null)" ]]; then
     # Wi-Fi
-    echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}') (Wi-Fi)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}')(Wi-Fi)%{$reset_color%}"
   elif [[ -n "$(ifconfig wlp3s0 2>/dev/null)" ]]; then
     # Wi-Fi (otra interfaz común)
-    echo "%{$fg[green]%}$(ifconfig wlp3s0 | awk '/inet / {print $2}') (Wi-Fi)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig wlp3s0 | awk '/inet / {print $2}')(Wi-Fi)%{$reset_color%}"
   elif [[ -n "$(ifconfig enp0s3 2>/dev/null)" ]]; then
     # Adaptador puente de VirtualBox
-    echo "%{$fg[green]%}$(ifconfig enp0s3 | awk '/inet / {print $2}') (Cable-VirtualBox)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig enp0s3 | awk '/inet / {print $2}')(Cable-Virtual)%{$reset_color%}"
   elif [[ -n "$(ifconfig enp0s8 2>/dev/null)" ]]; then
     # Otra configuración de adaptador puente de VirtualBox
-    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}') (Cable-VirtualBox)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}')(Cable-Virtual)%{$reset_color%}"
     # NAT de VirtualBox o Adaptador Puente
-    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}') (NAT-VirtualBox)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig enp0s8 | awk '/inet / {print $2}')(NAT-Virtual)%{$reset_color%}"
   elif [[ -n "$(ifconfig enp0s9 2>/dev/null)" ]]; then
     # Otra posible NAT de VirtualBox
-    echo "%{$fg[green]%}$(ifconfig enp0s9 | awk '/inet / {print $2}') (NAT-VirtualBox)%{$reset_color%}"
+    echo "%{$fg[green]%}$(ifconfig enp0s9 | awk '/inet / {print $2}')(NAT-Virtual)%{$reset_color%}"
   else
     # Sin conexión IP
     echo "%{$fg[red]%}No IP%{$reset_color%}"
