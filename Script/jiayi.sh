@@ -38,96 +38,80 @@ Oculto='\033[8m'
 Null='\033[0m'
 
 
+inst_gnome() {
+	sudo apt install -y kali-desktop-gnome
+	sudo apt install -y gdm3
+	sudo dpkg-reconfigure gdm3
+	sudo update-alternatives --config x-session-manager
+}
+
+obligatorio() {
+	sudo apt install tree -y
+	sudo apt install net-tools -y
+  	sudo apt install bat -y
+	sudo apt install curl -y
+  	sudo apt install wget -y
+    sudo apt install figlet -y
+    sudo apt install lolcat -y
+	sudo apt install neofetch -y
+	sudo apt install gnome-tweaks -y
+	sudo cp -rfv JiAyiX/exa /usr/local/bin/
+}
+
+mover() {
+	# Editor Nano
+	sudo cp -f JiAyiX/rc/nanorc.txt /etc/nanorc
+	# Página Web
+	sudo cp -f JiAyiX/JiAyiX.html /usr/share/kali-defaults/web/homepage.html || sudo cp -f JiAyiX/JiAyiX.html ~
+	# Terminal de Gnome
+	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
+	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
+	# Fondo de Pantalla
+  	sudo cp -rf ../Fondos/*.* ~/Imágenes || sudo cp -rf ../Fondos/*.* ~/Image
+	# Atajos de Gnome
+	dconf load / < JiAyiX/atajos/atajos.txt
+	# bashrc
+	cat JiAyiX/rc/bashrc.txt > ~/.bashrc
+}
+
+zsh() {
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+	git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+	git clone https://github.com/zdharma-continuum/alias-finder ~/.oh-my-zsh/custom/plugins/alias-finder
+	cat JiAyiX/rc/zshrc.txt > ~/.zshrc
+}
+
+otros() {
+	./superfile.sh
+	sudo ./idioma.sh
+}
+
+fin() {
+	figlet -f slant "JiAyiX" -c | lolcat
+	echo -e "${ROJO}"
+	read -p "PULSA CUALQUIER TECLA PARA REINICIAR ......"
+	echo -e "${Null}"
+	sudo reboot
+}
 
 
 
 
-while true
-do
-clear
-echo -e "${BlancoBg}                                                ${Null}"
-echo -e "${ROJO}${BlancoBg}${Parpadeo}   JiAyiX                                       ${Null}"
-echo -e "${BlancoBg}                                                ${Null}"
-echo -e "${NEGRO}${BlancoBg}          1. Gnome-Terminal.                    "
-echo -e "          2. Paquetes OBLIGATORIO.              "
-echo -e "          3. Bash.                              "
-echo -e "          4. Zsh.                               "
-echo -e "          5. Atajos GNOME.                      "
-echo -e "          6. Idioma.                            "
-echo -e "          7. Editor Nano.                       "
-echo -e "                                                "
-echo -e "          *. Salir.                             "
-echo -e "                                                "
-echo -e "                                                ${Null}"
-echo -e "${AMARILLO}"
-read -p "Opción a Realizar: " num
-echo -e "${Null}"
-case $num in
-	1) #Terminal
-		sudo apt install gnome-tweaks -y
-		sudo apt update && sudo apt upgrade gnome-tweaks -y
-		sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons
-		sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes
-  		sudo cp -rfv ../Fondos/*.* ~/Imágenes || sudo cp -rfv ../Fondos/*.* ~/Image
 
-		gnome-tweaks;;
+# Instalar los Paquetes Necesarios.
+obligatorio
 
 
-	2) #Instalación de Paquetes y Actualizar
-		sudo apt install tree -y
-		sudo apt install net-tools -y
-  		sudo apt install bat -y
-		sudo apt install curl -y
-  		sudo apt install wget -y
-    		sudo apt install figlet -y
-      		sudo apt install lolcat -y
-		sudo apt install neofetch -y
-		sudo cp -rfv JiAyiX/exa /usr/local/bin/
-		./superfile.sh;;
+# Instalar GNOME como Interfáz Gráfica.
+inst_gnome
 
+# Personalizaciñon JiAyiX
+mover
 
-	3) #Personalización Bash
-		cat JiAyiX/rc/bashrc.txt > ~/.bashrc
-		echo -e "${VERDE}"
-		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
-		echo -e "${Null}";;
+# plugin de zsh y personalización de JiAyiX
+zsh
 
-
-	4) #Personalización Zsh
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-		git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-		git clone https://github.com/zdharma-continuum/alias-finder ~/.oh-my-zsh/custom/plugins/alias-finder
-		cat JiAyiX/rc/zshrc.txt > ~/.zshrc
-  		echo -e "${VERDE}"
-		read -p "  Operación readizada con éxito. Toca caunquier tecla para continuar:" basura
-		echo -e "${Null}";;
-
-
-	5) #Atajos
-		dconf load / < JiAyiX/atajos/atajos.txt
-  		echo -e "${VERDE}"
-		read -p "Atajos completados." basura
-		echo -e "${Null}";;
-
-
-	6) #Idioma
-		sudo ./idioma.sh;;
-
-
-	7) # Nano
-		sudo cp -f JiAyiX/rc/nanorc.txt /etc/nanorc
-		echo -e "Las Copias de Seguridad se guardarán en:  ${MORADO}/var/tmp${Null}"
-		echo -e "${VERDE}"
-		read -p "Toca cyalquier tecla para continuar:" basura
-		echo -e "${Null}";;
-
-	*) #Salir
-		break;;
-
-esac
-done
-clear
-figlet -f slant "JiAyiX" -c | lolcat
-echo -e "Ejecute:  ${MORADO}source ~/.zshrc  ${Null} para actualizar la configuración."
+# Reiniciar
+fin
