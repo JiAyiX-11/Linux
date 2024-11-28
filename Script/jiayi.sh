@@ -67,7 +67,7 @@ mover() {
 	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
 	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
 	# Fondo de Pantalla
-  	sudo cp -rf ../Fondos/*.* ~/Imágenes || sudo cp -rf ../Fondos/*.* ~/Image
+  	sudo cp -rf ../Fondos/*.* ~/Imágenes || sudo cp -rf ../Fondos/*.* ~/Pictures
 	# Atajos de Gnome
 	dconf load / < JiAyiX/atajos/atajos.txt
 	# bashrc
