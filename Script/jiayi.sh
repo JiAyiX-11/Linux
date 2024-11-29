@@ -58,6 +58,7 @@ obligatorio() {
     sudo apt install figlet -y
     sudo apt install lolcat -y
 	sudo apt install neofetch -y
+	sudo apt install rofi -y
  	sudo apt install firefox && sudo apt install firefox-locale-es
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
 }
@@ -121,6 +122,9 @@ zsh
 
 # Gnome-Terminal
 gnome-tweaks
+
+# Limpiar
+clean
 
 # Reiniciar
 fin
