@@ -79,7 +79,8 @@ mover() {
 	# bashrc
 	cat JiAyiX/rc/bashrc.txt > ~/.bashrc
 	# firefox
-	tar -xzvf JiAyiX/firefox/firefox.tar.gz ~/.mozilla/firefox | lolcat
+	tar -xzvf JiAyiX/firefox/firefox.tar.gz -C ~/.mozilla/firefox | 
+	lolcat
 }
 
 zsh() {
@@ -120,11 +121,8 @@ mover
 # plugin de zsh y personalización de JiAyiX
 zsh
 
-# Gnome-Terminal
-gnome-tweaks
-
 # Limpiar
-clean
+clear
 
 # Reiniciar
 fin

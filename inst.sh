@@ -2,8 +2,6 @@
 
 sudo apt install zsh -y
 
-rm -rfd ~/.oh-my-zsh
-
 set -e
 
 USER=${USER:-$(id -u -n)}
