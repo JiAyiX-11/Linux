@@ -193,6 +193,7 @@ alias .='cd ..'
 alias ..='cd -'
 alias f='spf'
 alias p='ncdu'
+alias jy='figlet -f slant "JiAyiX" -c | lolcat'
 
 
 # Funciones
