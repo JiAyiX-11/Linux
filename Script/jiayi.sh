@@ -45,7 +45,7 @@ inst_gnome() {
  	sudo apt install gnome-tweaks -y
   	sudo apt install gnome-terminal -y
    	sudo apt install gnome-shell-extensions -y
-    	sudo apt install dconf-editor -y
+    sudo apt install dconf-editor -y
 	sudo update-alternatives --config x-session-manager
 }
 
@@ -55,8 +55,8 @@ obligatorio() {
   	sudo apt install bat -y
 	sudo apt install curl -y
   	sudo apt install wget -y
-    	sudo apt install figlet -y
-    	sudo apt install lolcat -y
+    sudo apt install figlet -y
+    sudo apt install lolcat -y
 	sudo apt install neofetch -y
  	sudo apt install firefox && sudo apt install firefox-locale-es
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
@@ -66,7 +66,8 @@ mover() {
 	# Editor Nano
 	sudo cp -f JiAyiX/rc/nanorc.txt /etc/nanorc
 	# Página Web
-	sudo cp -f JiAyiX/JiAyiX.html /usr/share/kali-defaults/web/homepage.html || sudo cp -f JiAyiX/JiAyiX.html ~
+	sudo cp -f JiAyiX/JiAyiX.html /var/www/html || sudo cp -f
+	JiAyiX/JiAyiX.html ~
 	# Terminal de Gnome
 	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
 	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
