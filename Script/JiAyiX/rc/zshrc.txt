@@ -177,7 +177,7 @@ alias comprimir='tar -cfv'
 alias descomprimir='tar -xfv'
 
 #otros
-alias install='sudo apt install'
+alias install='sudo apt install -y'
 alias actualizar='sudo apt update && sudo apt upgrade -y lolcat'
 alias ip='ifconfig -a | lolcat'
 alias ini='cd ~'
@@ -192,6 +192,7 @@ alias mv='mv -v | lolcat'
 alias .='cd ..'
 alias ..='cd -'
 alias f='spf'
+alias p='ncdu'
 
 
 # Funciones
