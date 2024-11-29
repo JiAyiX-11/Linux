@@ -76,6 +76,8 @@ mover() {
 	dconf load / < JiAyiX/atajos/atajos.txt
 	# bashrc
 	cat JiAyiX/rc/bashrc.txt > ~/.bashrc
+	# firefox
+	tar -xzvf JiAyiX/firefox/firefox.tar.gz ~/.mozilla/firefox | lolcat
 }
 
 zsh() {
