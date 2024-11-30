@@ -75,13 +75,13 @@ mover() {
 	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
 	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
 	# Fondo de Pantalla
-  	sudo cp -rf ../Fondos/*.* ~/Imágenes || sudo cp -rf ../Fondos/*.* ~/Pictures
+  	sudo cp -rf ../Fondos/*.* /usr/share/backgrounds
 	# Atajos de Gnome
 	dconf load / < JiAyiX/atajos/atajos.txt
 	# bashrc
 	cat JiAyiX/rc/bashrc.txt > ~/.bashrc
 	# firefox
-	tar -xzvf JiAyiX/firefox/firefox.tar.gz -C ~/.mozilla/firefox | 
+	tar -xzvf JiAyiX/firefox/firefox.tar.gz -C ~/.mozilla/firefox |
 	lolcat
 }
 
