@@ -193,8 +193,9 @@ alias mv='mv -v'
 alias .='cd ..'
 alias ..='cd -'
 alias f='spf'
-alias p='ncdu'
+alias c='ncdu'
 alias jy='figlet -f slant "JiAyiX" -c | lolcat'
+alias s='sudo freshclam && sudo clamscan -r --bell -i --move=/var/tmp'
 
 
 # Funciones

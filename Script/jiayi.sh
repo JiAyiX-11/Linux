@@ -61,6 +61,7 @@ obligatorio() {
 	sudo apt install rofi -y
 	sudo apt install ncdu -y
 	sudo apt install manpages-es -y
+	sudo apt install clamav clamav-daemon -y
  	sudo apt install firefox && sudo apt install firefox-locale-es
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
 }
