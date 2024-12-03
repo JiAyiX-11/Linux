@@ -72,6 +72,7 @@ mover() {
 	# Página Web
 	sudo cp -f JiAyiX/JiAyiX.html /var/www/html || sudo cp -f
 	JiAyiX/JiAyiX.html ~
+	sudo cp -f JiAyiX/JiAyiX.svg /var/www/html
 	# Terminal de Gnome
 	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
 	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
@@ -118,11 +119,11 @@ obligatorio
 # Instalar GNOME como Interfáz Gráfica.
 inst_gnome
 
-# Personalizaciñon JiAyiX
-mover
-
 # plugin de zsh y personalización de JiAyiX
 zsh
+
+# Personalizaciñon JiAyiX
+mover
 
 # Limpiar
 clear
