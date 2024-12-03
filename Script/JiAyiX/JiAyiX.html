@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JiAyi Landing Page</title>
+    <title>página de JiAyiX</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="JiAyiX.svg">
     <style>
         body, html {
             margin: 0;
@@ -25,6 +26,7 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5M5 1L1 5' stroke='%23333' stroke-opacity='0.2' stroke-width='0.5'/%3E%3C/svg%3E");
             background-size: 40px 40px;
+            z-index: 1;
         }
         .x-background {
             position: absolute;
@@ -38,6 +40,7 @@
             color: black;
             -webkit-text-stroke: 2px cyan;
             user-select: none;
+            z-index: 3;
         }
         .jiayi-text {
             position: absolute;
@@ -51,6 +54,7 @@
             color: black;
             -webkit-text-stroke: 2px gold;
             font-family: 'Montserrat', sans-serif;
+            z-index: 4;
         }
         .search-container {
             position: absolute;
@@ -61,6 +65,7 @@
             max-width: 800px;
             opacity: 0;
             transition: opacity 0.5s ease;
+            z-index: 5;
         }
         .search-container:hover,
         .search-container:focus-within {
@@ -77,13 +82,14 @@
             border-radius: 9999px;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            border: none;
+            border: 2px solid red;
             outline: none;
             font-size: 20px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .search-input:hover, .search-input:focus {
             background-color: rgba(255, 255, 255, 0.2);
+            border-color: #ff3333;
         }
         .search-icon {
             position: absolute;
@@ -106,6 +112,8 @@
             padding: 10px;
             color: white;
             display: none;
+            z-index: 6;
+            border: 2px solid red;
         }
         .search-suggestions div {
             padding: 8px 12px;
@@ -117,47 +125,34 @@
         }
         .rotating-border {
             position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: none;
             pointer-events: none;
+            z-index: 2;
         }
-        .rotating-border::before {
+        .rotating-border::before,
+        .rotating-border::after {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #00ff00, transparent);
-            animation: rotateBorder 4s linear infinite;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, gold);
+            animation: rotate 4s linear infinite;
         }
-        .rotating-border.top {
-            top: 0;
-            left: 0;
-            right: 0;
+        .rotating-border::after {
+            animation-delay: -2s;
         }
-        .rotating-border.right {
-            top: 0;
-            right: 0;
-            bottom: 0;
-            transform: rotate(90deg);
-            transform-origin: top right;
-        }
-        .rotating-border.bottom {
-            bottom: 0;
-            left: 0;
-            right: 0;
-            transform: rotate(180deg);
-        }
-        .rotating-border.left {
-            top: 0;
-            left: 0;
-            bottom: 0;
-            transform: rotate(270deg);
-            transform-origin: bottom left;
-        }
-        @keyframes rotateBorder {
+        @keyframes rotate {
             0% {
-                transform: translateX(-100%);
+                transform: rotate(0deg);
             }
             100% {
-                transform: translateX(100%);
+                transform: rotate(360deg);
             }
         }
     </style>
@@ -165,11 +160,12 @@
 <body>
     <div class="container">
         <div class="background-pattern"></div>
+        <div class="rotating-border"></div>
         <div class="x-background">X</div>
         <div class="jiayi-text">JiAyi</div>
         <div class="search-container" id="searchContainer">
             <form class="search-bar" action="https://www.google.com/search" method="get" target="_blank">
-                <input type="text" class="search-input" name="q" aria-label="Buscar" id="searchInput" autocomplete="off" placeholder="Buscar...">
+                <input type="text" class="search-input" name="q" aria-label="JiAyiX" id="searchInput" autocomplete="off" placeholder="JiAyiX">
                 <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -178,10 +174,6 @@
             </form>
         </div>
     </div>
-    <div class="rotating-border top"></div>
-    <div class="rotating-border right"></div>
-    <div class="rotating-border bottom"></div>
-    <div class="rotating-border left"></div>
 
     <script>
         const searchContainer = document.getElementById('searchContainer');
