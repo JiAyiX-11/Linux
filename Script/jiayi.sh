@@ -45,7 +45,7 @@ inst_gnome() {
  	sudo apt install gnome-tweaks -y
   	sudo apt install gnome-terminal -y
    	sudo apt install gnome-shell-extensions -y
-    sudo apt install dconf-editor -y
+    	sudo apt install dconf-editor -y
 	sudo update-alternatives --config x-session-manager
 }
 
@@ -55,14 +55,13 @@ obligatorio() {
   	sudo apt install bat -y
 	sudo apt install curl -y
   	sudo apt install wget -y
-    sudo apt install figlet -y
-    sudo apt install lolcat -y
+    	sudo apt install figlet -y
+    	sudo apt install lolcat -y
 	sudo apt install neofetch -y
 	sudo apt install rofi -y
 	sudo apt install ncdu -y
 	sudo apt install manpages-es -y
 	sudo apt install clamav clamav-daemon -y
- 	sudo apt install firefox && sudo apt install firefox-locale-es
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
 }
 
@@ -70,11 +69,11 @@ mover() {
 	# Editor Nano
 	sudo cp -f JiAyiX/rc/nanorc.txt /etc/nanorc
 	# Página Web
-	sudo cp -f JiAyiX/JiAyiX.html /var/www/html || sudo cp -f
-	JiAyiX/JiAyiX.html ~
+	sudo cp -f JiAyiX/JiAyiX.html /var/www/html
 	sudo cp -f JiAyiX/JiAyiX.svg /var/www/html
 	# Terminal de Gnome
-	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat && sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
+	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat 
+ 	sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
 	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
 	# Fondo de Pantalla
   	sudo cp -rf ../Fondos/*.* /usr/share/backgrounds
@@ -82,9 +81,6 @@ mover() {
 	dconf load / < JiAyiX/atajos/atajos.txt
 	# bashrc
 	cat JiAyiX/rc/bashrc.txt > ~/.bashrc
-	# firefox
-	tar -xzvf JiAyiX/firefox/firefox.tar.gz -C ~/.mozilla/firefox |
-	lolcat
 }
 
 zsh() {
@@ -96,8 +92,7 @@ zsh() {
 	cat JiAyiX/rc/zshrc.txt > ~/.zshrc
 }
 
-otros() {
-	./superfile.sh
+idioma() {
 	sudo ./idioma.sh
 }
 
@@ -124,6 +119,9 @@ zsh
 
 # Personalizaciñon JiAyiX
 mover
+
+# idioma
+idioma
 
 # Limpiar
 clear
