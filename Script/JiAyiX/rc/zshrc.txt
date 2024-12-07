@@ -5,13 +5,15 @@ else
     echo "JiAyiX"
 fi
 
+
+
 # Tema zsh
 zsh_theme=""
 	PROMPT='
-%B┌─[%F{red}($(whoami))%f%F{yellow}Ruta: %~%f] [%F{green}Red: $(get_ip_address)%f%B]%b $(git_prompt_info)
-%B└─➜%b '
+%B%F{magenta}┌─%f%F{magenta}[%f%F{red}($(whoami))%fRuta: %F{4}%~%f%F{magenta}]%f %F{magenta}[%fRed: %F{green}$(get_ip_address)%f%B%F{magenta}]%f%b%f $(git_prompt_info)
+%B%F{magenta}└─➜%b%f '
 
-RPROMPT='[%B%F{blue}%*%f%b]'
+RPROMPT='[%B$(get_ram_usage)%b]'
 
 get_ip_address() {
   if [[ -n "$(ifconfig tun0 2>/dev/null)" ]]; then
@@ -42,6 +44,59 @@ get_ip_address() {
     echo "%{$fg[red]%}No IP%{$reset_color%}"
   fi
 }
+
+# Función para obtener el consumo de RAM y clasificarlo por GB
+get_ram_usage() {
+  # Obtener el uso de RAM en GB (convertido desde MB)
+  local ram_total=$(free -m | awk '/^Mem:/ {print $2}')
+  local ram_used=$(free -m | awk '/^Mem:/ {print $3}')
+  local ram_used_gb=$((ram_used / 1024))  # Convertimos de MB a GB
+  
+  # Clasificación de la RAM
+  if (( ram_used_gb < 13 )); then
+    echo "%F{green}RAM: ${ram_used_gb}GB%f"
+  elif (( ram_used_gb >= 13 && ram_used_gb <= 24 )); then
+    echo "%F{yellow}RAM: ${ram_used_gb}GB%f"
+  else
+    echo "%F{red}RAM: ${ram_used_gb}GB%f"
+  fi
+}
+
+# Función para mostrar el estado de Git en el prompt
+git_prompt_info() {
+  # Si estamos dentro de un repositorio Git
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    # Obtener la rama actual
+    local branch=$(git symbolic-ref --short HEAD)
+    
+    # Obtener el estado del repositorio
+    local status=""
+    
+    # Cambios staged (listos para commit)
+    if [[ -n "$(git diff --cached --stat)" ]]; then
+      status+="%F{yellow}●%f"  # Marca los archivos staged
+    fi
+    
+    # Cambios no staged (modificados)
+    if [[ -n "$(git diff --stat)" ]]; then
+      status+="%F{blue}●%f"  # Marca los archivos modificados
+    fi
+    
+    # Archivos no rastreados
+    if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+      status+="%F{red}●%f"  # Marca los archivos no rastreados
+    fi
+    
+    # Agregar información de conflicto
+    if [[ -n "$(git ls-files --unmerged)" ]]; then
+      status+="%F{magenta}✗%f"  # Marca conflictos
+    fi
+
+    # Combinar la información de la rama y el estado
+    echo "%F{green}(${branch})%f ${status}"
+  fi
+}
+
 
 
 # Ruta de Instalación de Oh-My-Zsh
@@ -165,7 +220,7 @@ alias l='exa -lhgHF --colour=always --icons --group-directories-first'
 alias lt='exa --long --tree --colour=always --icons --group-directories-first'
 
 # cat
-alias cat='BAT_THEME="Dracula" batcat --paging=never --color=always'
+alias cat='batcat --paging=never'
 
 #grep
 alias egrep='egrep --color=auto'
@@ -177,10 +232,9 @@ alias comprimir='tar -cfv'
 alias descomprimir='tar -xfv'
 
 #otros
-alias cp='sudo cp -rfv'
 alias install='sudo apt install -y'
 alias actualizar='sudo apt update && sudo apt upgrade -y | lolcat'
-alias ip='ifconfig -a | lolcat'
+
 alias ini='cd ~'
 alias t='tree -L 2'
 alias reiniciar='shutdown -r 0'
@@ -193,9 +247,9 @@ alias mv='mv -v'
 alias .='cd ..'
 alias ..='cd -'
 alias f='spf'
-alias c='ncdu'
 alias jy='figlet -f slant "JiAyiX" -c | lolcat'
-alias s='sudo freshclam && sudo clamscan -r --bell -i --move=/var/tmp'
+alias c='ncdu'
+alias s='sudo freshclam && sudo clamscan -r --bell  --move=/var/tmp'
 
 
 # Funciones

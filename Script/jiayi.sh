@@ -45,24 +45,24 @@ inst_gnome() {
  	sudo apt install gnome-tweaks -y
   	sudo apt install gnome-terminal -y
    	sudo apt install gnome-shell-extensions -y
-    	sudo apt install dconf-editor -y
+    sudo apt install dconf-editor -y
 	sudo update-alternatives --config x-session-manager
 }
 
 obligatorio() {
 	sudo apt install tree -y
-	sudo apt install net-tools -y
   	sudo apt install bat -y
 	sudo apt install curl -y
   	sudo apt install wget -y
-    	sudo apt install figlet -y
-    	sudo apt install lolcat -y
+    sudo apt install figlet -y
+    sudo apt install lolcat -y
 	sudo apt install neofetch -y
 	sudo apt install rofi -y
 	sudo apt install ncdu -y
 	sudo apt install manpages-es -y
 	sudo apt install clamav clamav-daemon -y
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
+	sudo cp -rfv JiAyiX/ip /usr/bin/
 }
 
 mover() {
@@ -99,7 +99,7 @@ idioma() {
 fin() {
 	figlet -f slant "JiAyiX" -c | lolcat
 	echo -e "${ROJO}"
-	read -p "PULSA CUALQUIER TECLA PARA REINICIAR ......"
+	read -p "      ......  PULSA CUALQUIER TECLA PARA REINICIAR ......"
 	echo -e "${Null}"
 	sudo reboot
 }
