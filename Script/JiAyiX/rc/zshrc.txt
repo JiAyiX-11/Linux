@@ -151,7 +151,7 @@ HIST_STAMPS="dd.mm.yyyy"
 
 
 # Plugins
-plugins=(git 
+plugins=(#git 
 	 zsh-syntax-highlighting 
 	 zsh-autosuggestions
 	 z
@@ -255,8 +255,10 @@ alias so='neofetch | lolcat'
 alias t='tree -L 2'
 alias jy='figlet -f slant "JiAyiX" -c | lolcat'
 alias tamaño='ncdu'
-alias scan='sudo freshclam && sudo clamscan -r --bell  --move=/var/tmp'
 
+#seguridad
+alias escaneo='sudo freshclam && sudo clamscan -r --bell  --move=/var/tmp'
+alias puertos='ss -tuln'
 
 
 # Funciones

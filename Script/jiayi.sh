@@ -40,12 +40,12 @@ Null='\033[0m'
 
 inst_gnome() {
 	sudo apt install -y kali-desktop-gnome 
-	sudo apt install -y gdm3
-	sudo dpkg-reconfigure gdm3
  	sudo apt install gnome-tweaks -y
   	sudo apt install gnome-terminal -y
    	sudo apt install gnome-shell-extensions -y
     sudo apt install dconf-editor -y
+	sudo apt install -y gdm3
+	sudo dpkg-reconfigure gdm3
 	sudo update-alternatives --config x-session-manager
 }
 
