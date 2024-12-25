@@ -61,6 +61,7 @@ obligatorio() {
 	sudo apt install ncdu -y
 	sudo apt install manpages-es -y
 	sudo apt install clamav clamav-daemon -y
+ 	sudo apt install net-tools -y
 	sudo cp -rfv JiAyiX/exa /usr/local/bin/
 	sudo cp -rfv JiAyiX/ip /usr/bin/
 }
