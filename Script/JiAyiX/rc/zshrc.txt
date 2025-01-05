@@ -250,6 +250,7 @@ alias ..='cd -'
 alias reiniciar='shutdown -r 0'
 alias apagar='shutdown now'
 alias so='neofetch | lolcat'
+alias particiones='sudo fdisk -l'
 
 #otros
 alias t='tree -L 2'
