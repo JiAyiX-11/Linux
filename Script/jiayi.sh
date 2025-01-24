@@ -73,9 +73,9 @@ mover() {
 	sudo cp -f JiAyiX/JiAyiX.html /var/www/html
 	sudo cp -f JiAyiX/JiAyiX.svg /var/www/html
 	# Terminal de Gnome
-	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes | lolcat 
- 	sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons | lolcat
-	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes | lolcat
+	sudo cp -rfv JiAyiX/skin/tema_JiAyi /usr/share/themes
+ 	sudo cp -rfv JiAyiX/skin/cursor_JiAyi /usr/share/icons 
+	sudo cp -rfv JiAyiX/skin/Kali-Purple-Dark /usr/share/themes 
 	# Fondo de Pantalla
   	sudo cp -rf ../Fondos/*.* /usr/share/backgrounds
 	# Atajos de Gnome
@@ -98,7 +98,7 @@ idioma() {
 }
 
 fin() {
-	figlet -f slant "JiAyiX" -c | lolcat
+	figlet -f slant "JiAyiX" -c 
 	echo -e "${ROJO}"
 	read -p "      ......  PULSA CUALQUIER TECLA PARA REINICIAR ......"
 	echo -e "${Null}"
