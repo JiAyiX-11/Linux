@@ -10,7 +10,7 @@ fi
 # Tema zsh
 zsh_theme=""
 	PROMPT='
-%B%F{magenta}┌─%f%F{magenta}[%f%F{red}($(whoami))%fRed: %F{green}$(get_ip_address)%f%F{magenta}]%f %F{magenta}[%fRuta: %F{4}%~%f%B%F{magenta}]%f%b%f $(git_prompt_info)
+%B%F{magenta}┌─%f%F{magenta}[%f%F{red}($(whoami))%f%bRed: %F{green}$(get_ip_address)%f%B%F{magenta}]%f%b %B%F{magenta}[%b%fRuta: %F{4}%~%f%B%F{magenta}]%f%b%f $(git_prompt_info)
 %B%F{magenta}└─➜%b%f '
 
 RPROMPT='[%B$(get_ram_usage)%b]'
