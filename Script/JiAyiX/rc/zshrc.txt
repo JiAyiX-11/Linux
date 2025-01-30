@@ -260,7 +260,7 @@ alias tamaño='ncdu'
 
 #seguridad
 alias escaneo='sudo freshclam && sudo clamscan -r --bell  --move=/var/tmp'
-alias puertos='ss -tuln'
+alias puertos='ss -tulnp'
 
 
 # Funciones
