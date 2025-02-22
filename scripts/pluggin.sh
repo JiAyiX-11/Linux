@@ -1,0 +1,1 @@
+sudo cp -rfd mover/pluggin/* ~/.oh-my-zsh/

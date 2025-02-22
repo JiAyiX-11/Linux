@@ -1,0 +1,154 @@
+## Fuciones.
+# Moviendo con Ctrl la palabra se detengan al final de las palabras en lugar de al principio.
+set afterends
+
+# Automáticamente la siguiente líena tendrá los mismos espacios que el anterior.
+set autoindent
+
+# Copias de seguridad.
+set backup
+
+# Directorio de las copias de seguridad.
+set backupdir "/var/tmp"
+
+# Texto en Negrita.
+set boldtext
+
+# Márgenes derecho y izquierdo.
+set bookstyle
+
+# Ajusta automáticamente la línea actual cuando se vuelve demasiado larga.
+set breaklonglines
+
+# Distingue del Mayúscula e minúscula.
+set casesensitive
+
+# Cuando editas en que lineas quieres empezar.
+set colonparsing
+
+# Muestra constantemente la posición del cursor en la barra de estado o minibar.
+set constantshow
+
+# Recuerda las cadenas de búsqueda/reemplazo usadas para la próxima sesión.
+set historylog
+
+# Barra para indicar tu lugar.
+set indicator
+
+# línea en la barra lateral.
+set linenumbers
+
+# Habilitar que otros editores puedan editar.
+set locking
+
+# En la barra inferior sale un pequeño minibar con datos.
+set minibar
+
+# Usar el ratón para moverse
+#set mouse
+
+# Activar múltiples ediciones.
+set multibuffer
+
+# Oculta los atajos del teclado.
+set nohelp
+
+# No añade línea automaticamente.
+set nonewlines
+
+# Habilitarlo cuando el terminal no funciona bien con el nano.
+# set rawsequences
+
+# Guardar Automáticamente.
+# set saveonexit
+
+# Resaltar el cursor.
+set showcursor
+
+# Las líneas largas que sobrepasen del terminal lo sigue con otra linea.
+#set softwrap
+
+# Bloques para la tabulación.
+set tabsize 4
+
+# Guarda los archivos por defecto en formato Unix (también si eran formato DOS o Mac).
+# set unix
+
+# Borrar lo que resaltas con el cursor usando el espacio o delete.
+set zap
+
+
+
+
+
+## Color Terminal.
+# Color título.
+set titlecolor bold,yellow,black
+
+# Color para cuando guardas.
+set promptcolor black,white
+
+# Color de la barra inferior.
+#set statuscolor bold,white,green
+
+# Color de los mensajes de error.
+set errorcolor bold,black,red
+
+# Color del resalto.
+set spotlightcolor red,black
+
+# Color de los elementos seleccionados.
+set selectedcolor black,white
+
+# Color de la bara.
+set scrollercolor red
+
+# Color de los numero barra lateral.
+set numbercolor red
+
+# Color de las teclas de acceso rápido.
+#set keycolor cyan
+
+# Color de la teclas de función.
+set functioncolor green
+
+
+
+
+
+## To include most of the existing syntax definitions, you can do:
+include "/usr/share/nano/*.nanorc"
+
+## Or you can select just the ones you need.  For example:
+# include "/usr/share/nano/html.nanorc"
+# include "/usr/share/nano/python.nanorc"
+# include "/usr/share/nano/sh.nanorc"
+
+## In /usr/share/nano/extra/ you can find some syntaxes that are
+## specific for certain distros or for some less common languages.
+
+
+
+
+
+## Comandos.
+# Cortar fila.
+bind ^k cut main
+
+# Copiar.
+bind ^C copy main
+
+# Pegar.
+bind ^V paste all
+
+# Salir.
+bind ^X exit all
+
+# Guardar.
+bind ^O writeout main
+
+# Ir a la linea.
+bind ^N gotoline main
+
+# Buscar.
+bind ^W whereis all

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JiAyiX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="JiAyiX.svg">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background-color: #000000;
+            overflow: hidden;
+        }
+        .background-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5M5 1L1 5' stroke='%23333' stroke-opacity='0.2' stroke-width='0.5'/%3E%3C/svg%3E");
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+        .x-background {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150vh;
+            font-weight: bold;
+            line-height: 1;
+            color: black;
+            -webkit-text-stroke: 2px cyan;
+            user-select: none;
+            z-index: 3;
+        }
+        .jiayi-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20vw;
+            font-weight: bold;
+            line-height: 1;
+            color: black;
+            -webkit-text-stroke: 2px gold;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 4;
+        }
+        .search-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            max-width: 800px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 5;
+        }
+        .search-container:hover,
+        .search-container:focus-within {
+            opacity: 1;
+        }
+        .search-bar {
+            position: relative;
+            width: 100%;
+        }
+        .search-input {
+            width: 100%;
+            height: 60px;
+            padding: 0 20px 0 60px;
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid red;
+            outline: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        .search-input:hover, .search-input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: #ff3333;
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            color: white;
+            display: none;
+            z-index: 6;
+            border: 2px solid red;
+        }
+        .search-suggestions div {
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .search-suggestions div:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-pattern"></div>
+        <div class="rotating-border"></div>
+        <div class="x-background">X</div>
+        <div class="jiayi-text">JiAyi</div>
+        <div class="search-container" id="searchContainer">
+            <form class="search-bar" action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" class="search-input" name="q" aria-label="JiAyiX" id="searchInput" autocomplete="off" placeholder="JiAyiX">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const searchContainer = document.getElementById('searchContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        let fadeOutTimeout;
+
+        searchContainer.addEventListener('mouseenter', () => {
+            clearTimeout(fadeOutTimeout);
+            searchContainer.style.opacity = '1';
+        });
+
+        searchContainer.addEventListener('mouseleave', () => {
+            if (document.activeElement !== searchInput) {
+                startFadeOut();
+            }
+        });
+
+        searchInput.addEventListener('focus', () => {
+            clearTimeout(fadeOutTimeout);
+            searchContainer.style.opacity = '1';
+        });
+
+        searchInput.addEventListener('blur', startFadeOut);
+
+        function startFadeOut() {
+            fadeOutTimeout = setTimeout(() => {
+                searchContainer.style.opacity = '0';
+            }, 100);
+        }
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+            if (query.length > 0) {
+                fetchSuggestions(query);
+            } else {
+                searchSuggestions.style.display = 'none';
+            }
+        });
+
+        function fetchSuggestions(query) {
+            const script = document.createElement('script');
+            script.src = `https://suggestqueries.google.com/complete/search?client=chrome&q=${encodeURIComponent(query)}&callback=handleSuggestions`;
+            document.body.appendChild(script);
+            document.body.removeChild(script);
+        }
+
+        window.handleSuggestions = function(data) {
+            const suggestions = data[1];
+            if (suggestions.length > 0) {
+                searchSuggestions.innerHTML = suggestions.map(suggestion => 
+                    `<div onclick="selectSuggestion('${suggestion.replace(/'/g, "\\'")}')">${suggestion}</div>`
+                ).join('');
+                searchSuggestions.style.display = 'block';
+            } else {
+                searchSuggestions.style.display = 'none';
+            }
+        }
+
+        function selectSuggestion(suggestion) {
+            searchInput.value = suggestion;
+            searchSuggestions.style.display = 'none';
+            document.querySelector('.search-bar').submit();
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!searchContainer.contains(event.target)) {
+                startFadeOut();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# Mostrar banner personalizado
+if command -v figlet &> /dev/null && command -v lolcat &> /dev/null; then
+    figlet -f slant "JiAyiX" -c | lolcat
+else
+    echo "JiAyiX"
+fi
+
+# Gestión de archivo target
+init_target_file() {
+    local file="/tmp/target_ip"
+    [[ ! -f "$file" ]] && touch "$file"
+}
+init_target_file
+
+# Configurar prompt
+set_bash_prompt() {
+    local EXIT_STATUS=$?
+    local VICTIM_IP=$(get_victim_ip)
+    
+    PS1="\n\[\033[35m\]┌─[\[\033[1;31m\]\u\[\033[35m\]@\[\033[1;32m\]\h "
+    PS1+="\[\033[33m\]\w\[\033[35m\]] "
+    PS1+="\[\033[32m\]($(get_active_interface))\[\033[35m\] "
+    PS1+="${VICTIM_IP}\n"
+    PS1+="\[\033[35m\]└─➜\[\033[0m\] "
+    
+    # Indicador de éxito/error
+    if [[ $EXIT_STATUS -eq 0 ]]; then
+        PS1+="\[\033[32m\]\[\033[0m\] "
+    else
+        PS1+="\[\033[31m\]\[\033[0m\] "
+    fi
+}
+PROMPT_COMMAND=set_bash_prompt
+
+# Obtener interfaz de red activa
+get_active_interface() {
+    local interfaces=(
+        "tun0:VPN"
+        "eth0:Cable"
+        "wlan0:Wi-Fi"
+        "wlp3s0:Wi-Fi"
+        "enp0s3:Cable-Virtual"
+        "enp0s8:NAT-Virtual"
+        "enp0s9:NAT-Virtual"
+        "ens33:Virtual"
+        "ens160:Virtual"
+    )
+    
+    for entry in "${interfaces[@]}"; do
+        local iface="${entry%%:*}"
+        local label="${entry##*:}"
+        local ip=$(ip addr show "$iface" 2>/dev/null | awk '/inet / {print $2}' | cut -d/ -f1 | head -n1)
+        [[ -n "$ip" ]] && echo -e "${ip} (${label})" && return
+    done
+    echo -e "Sin conexión"
+}
+
+# Obtener IP víctima
+get_victim_ip() {
+    local file="/tmp/target_ip"
+    if [[ -s "$file" ]]; then
+        local ip=$(<"$file")
+        echo -e "\[\033[35m\][\[\033[31m\]Víctima: ${ip}\[\033[35m\]]"
+    else
+        echo -e "\[\033[35m\][\[\033[33m\]Sin víctima\[\033[35m\]]"
+    fi
+}
+
+# Comandos para gestión de targets
+target() {
+    (($# != 1)) && echo "Uso: target <IP>" && return 1
+    echo "$1" > /tmp/target_ip
+    echo -e "\033[32mIP víctima establecida: \033[1m$1\033[0m"
+}
+
+ctarget() {
+    > /tmp/target_ip && echo -e "\033[33mIP víctima borrada\033[0m"
+}
+
+# Alias
+# listar
+alias ll='exa -lhgHaF --colour=always --icons --group-directories-first'
+alias l='exa -lhgHF --colour=always --icons --group-directories-first'
+alias lt='exa --long --tree --colour=always --icons --group-directories-first'
+
+# mirar
+alias cat='batcat --paging=never'
+alias cato='cat'
+
+# basicos
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto -in'
+alias publica='curl ifconfig.co'
+alias install='sudo apt install -y'
+alias actualizar='sudo apt update && sudo apt upgrade -y | lolcat'
+alias mk='sudo mkdir -pv'
+alias rm='sudo rm -dfriv'
+alias mv='sudo mv -v'
+
+#comprimir
+alias comprimir='tar -cfv'
+alias descomprimir='tar -xfv'
+
+# permisos
+alias chown='sudo chown'
+alias chmod='sudo chmod'
+
+# mover
+alias ini='cd ~'
+alias .='cd ..'
+alias ..='cd -'
+
+# sistema
+alias reiniciar='shutdown -r 0'
+alias apagar='shutdown now'
+alias so='neofetch | lolcat'
+alias particiones='sudo fdisk -l'
+
+#otros
+alias t='tree -L 2'
+alias jy='figlet -f slant "JiAyiX" -c | lolcat'
+alias tamaño='ncdu'
+
+#seguridad
+alias escaneo='sudo freshclam && sudo clamscan -r --bell  --move=/var/tmp'
+alias puertos='ss -tulnp'
+
+
+# Configuración de historial
+HISTCONTROL=ignoreboth
+HISTSIZE=5000
+HISTFILESIZE=10000
+shopt -s histappend
