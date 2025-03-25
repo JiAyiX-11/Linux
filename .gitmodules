@@ -1,0 +1,3 @@
+[submodule "/home/jiayi/Linux/scripts/mover/pluggin/plugins/zsh-autosuggestions"]
+	path = /home/jiayi/Linux/scripts/mover/pluggin/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
