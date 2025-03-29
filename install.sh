@@ -153,10 +153,10 @@ mensaje() {
 
     # Fin
     echo -e "${AMARILLO}"
-    echo -e "[*] git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
-    echo -e "[*] "
+    echo -e "[*] git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+    echo -e "[*] git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions"
     read -p "[?] Pulsa Cualquier tecla para Terminar..." basura
-    echo -e "${Null}" git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+    echo -e "${Null}" 
     clear
 }
 
