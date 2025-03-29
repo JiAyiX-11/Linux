@@ -10,7 +10,7 @@ preload-engines=['xkb:es::spa']
 version='1.5.31'
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='background'
 window-state=(980, 640, false)
 
 [org/gnome/desktop/app-folders]
@@ -35,8 +35,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/ArchDrag%C3%B3n.png'
-picture-uri-dark='file:///usr/share/backgrounds/ArchDrag%C3%B3n.png'
+picture-uri='file:///usr/share/backgrounds/JiAyiX_White.png'
+picture-uri-dark='file:///usr/share/backgrounds/JiAyiX_Black.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -59,7 +59,7 @@ icon-theme='Flat-Remix-Purple-Dark'
 automount=true
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-terminal-preferences', 'firefox-esr', 'gnome-power-panel', 'org-gnome-tweaks', 'org-gnome-settings']
+application-children=['org-gnome-terminal-preferences', 'firefox-esr', 'gnome-power-panel', 'org-gnome-tweaks', 'org-gnome-settings', 'todesk', 'org-gnome-terminal', 'org-gnome-evolution-alarm-notify']
 
 [org/gnome/desktop/notifications/application/firefox-esr]
 application-id='firefox-esr.desktop'
@@ -67,14 +67,23 @@ application-id='firefox-esr.desktop'
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify]
+application-id='org.gnome.Evolution-alarm-notify.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-settings]
 application-id='org.gnome.Settings.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-terminal-preferences]
 application-id='org.gnome.Terminal.Preferences.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-tweaks]
 application-id='org.gnome.tweaks.desktop'
+
+[org/gnome/desktop/notifications/application/todesk]
+application-id='todesk.desktop'
 
 [org/gnome/desktop/peripherals/mouse]
 speed=0.0
@@ -86,7 +95,7 @@ two-finger-scrolling-enabled=true
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/jiayi/.local/share/backgrounds/2024-11-17-22-23-36-ArchDrag%C3%B3n.png'
+picture-uri='file:///home/jiayi/.local/share/backgrounds/2025-03-29-16-35-17-JiAyiX_Black.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -110,6 +119,19 @@ unmaximize=@as []
 [org/gnome/evolution-data-server]
 migrated=true
 
+[org/gnome/evolution-data-server/calendar]
+reminders-past=['a9a1353165764584cb538f97b6586f72331dc993\n28bb67c4bd539d5055599b6247edb166a25c6552\t20250325T170800\n1742917080\n1742918880\n1742935020\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20250325T170800\r\nDTEND;TZID=Europe/Madrid:20250325T213700\r\nDTSTAMP:20250324T131724Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:e6v2bvl4utjfqt338sn5fo04ok@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=jiayiwei9@gmail.com;X-NUM-GUESTS=0:mailto:jiayiwei9@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20250324T131723Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DP1CuNeS4TQnEpx5Ejd0RYfh9jKaTs\r\n 3_h0\\n\r\nLAST-MODIFIED:20250324T131724Z\r\nLOCATION:Madrid-Chamartín-Clara Campoamor\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Train to Vigo Urzaiz\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63878505444\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT30M\r\nX-EVOLUTION-ALARM-UID:28bb67c4bd539d5055599b6247edb166a25c6552\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'a9a1353165764584cb538f97b6586f72331dc993\n3fbad427745d1ad5503fedd2bdc40e5ffeadcf7c\t20250326T132000\n1742905200\n1742991600\n1743006960\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20250326T132000\r\nDTEND;TZID=Europe/Madrid:20250326T173600\r\nDTSTAMP:20250325T122116Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:j3hv9m3di807i18j0vnrgcc2n4@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=jiayiwei9@gmail.com;X-NUM-GUESTS=0:mailto:jiayiwei9@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20250121T223822Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DM_0ecXA_US3fVTguunQ54tVJwEbk1\r\n BSD4\\n\r\nLAST-MODIFIED:20250325T122116Z\r\nLOCATION:Vigo Urzáiz\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Train to Madrid-Chamartín-Clara Campoamor\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63878588476\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:3fbad427745d1ad5503fedd2bdc40e5ffeadcf7c\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'a9a1353165764584cb538f97b6586f72331dc993\n8cbef2f0716bd73ec04849023ab2c58d66d75f95\t20250325T170800\n1742832480\n1742918880\n1742935020\nBEGIN:VEVENT\r\nDTSTART;TZID=Europe/Madrid:20250325T170800\r\nDTEND;TZID=Europe/Madrid:20250325T213700\r\nDTSTAMP:20250121T223822Z\r\nORGANIZER;CN=Unknown Organizer:mailto:\r\n unknownorganizer@calendar.google.com\r\nUID:ao0otigl9vbh85ci27e4p315ao@google.com\r\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;\r\n CN=jiayiwei9@gmail.com;X-NUM-GUESTS=0:mailto:jiayiwei9@gmail.com\r\nCLASS:PRIVATE\r\nCREATED:20250121T223822Z\r\nDESCRIPTION:Si quieres ver información detallada sobre los eventos \r\n creados automáticamente como este\\, utiliza la aplicación oficial de \r\n Google Calendar. https://g.co/calendar\\n\\nEste evento se ha creado a \r\n partir de un correo que recibiste en Gmail. https:\r\n //mail.google.com/mail?extsrc=cal&plid=ACUX6DM_0ecXA_US3fVTguunQ54tVJwEbk1\r\n BSD4\\n\r\nLAST-MODIFIED:20250121T223822Z\r\nLOCATION:Madrid-Chamartín-Clara Campoamor\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Train to Vigo Urzáiz\r\nTRANSP:TRANSPARENT\r\nX-EVOLUTION-CALDAV-ETAG:63873182302\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P1D\r\nX-EVOLUTION-ALARM-UID:8cbef2f0716bd73ec04849023ab2c58d66d75f95\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+
+[org/gnome/gnome-system-monitor]
+cpu-colors=[(uint32 0, '#fd3535'), (1, '#fd7d00'), (2, '#ffc730'), (3, '#0ca15e'), (4, '#14816c'), (5, '#4aaee6'), (6, '#367bf0'), (7, '#265ab1'), (8, '#153873'), (9, '#8c42ab'), (10, '#b8174c'), (11, '#d41919'), (12, '#7999d8c5f332'), (13, '#f332ea237999'), (14, '#c6a87999f332'), (15, '#7999f332a32d'), (16, '#f3327fb17999'), (17, '#799996fbf332'), (18, '#ba77f3327999'), (19, '#f3327999ddf2'), (20, '#7999f332e4f6'), (21, '#f332c17b7999')]
+current-tab='disks'
+show-dependencies=false
+show-whose-processes='user'
+
+[org/gnome/gnome-system-monitor/proctree]
+col-26-visible=false
+col-26-width=0
+
 [org/gnome/mutter]
 dynamic-workspaces=false
 edge-tiling=false
@@ -130,12 +152,13 @@ search-filter-time-type='last_modified'
 [org/gnome/nautilus/window-state]
 initial-size=(890, 550)
 initial-size-file-chooser=(890, 550)
+maximized=true
 
 [org/gnome/portal/filechooser/gnome-tweaks]
 last-folder-path='/home/jiayi/Imágenes'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
-last-folder-path='/home/jiayi/Descargas'
+last-folder-path='/usr/share/backgrounds'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
@@ -183,7 +206,7 @@ command-history=['firefox', 'apagar', 'shutdown now', 'rebooot', 'reboot', 'wmct
 disabled-extensions=['native-window-placement@gnome-shell-extensions.gcampax.github.com']
 enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'ProxySwitcher@flannaghan.com', 'ubuntu-appindicators@ubuntu.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com', 'tiling-assistant@leleat-on-github', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com']
 favorite-apps=['org.gnome.Terminal.desktop', 'firefox-esr.desktop']
-last-selected-power-profile='performance'
+last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='46.3.1'
 
 [org/gnome/shell/app-switcher]
