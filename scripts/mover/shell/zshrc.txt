@@ -227,8 +227,7 @@ alias l='exa -lhgHF --colour=always --icons --group-directories-first'
 alias lt='exa --long --tree --colour=always --icons --group-directories-first'
 
 # mirar
-alias cat='batcat --paging=never'
-alias cato='cat'
+alias cato='batcat --paging=never'
 
 # basicos
 alias egrep='egrep --color=auto'
