@@ -150,11 +150,11 @@ mensaje() {
     echo -e "[+] Configurando el Zsh...${Null}"
     cat scripts/mover/shell/zshrc.txt > ~/.zshrc
     barra 2
-
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+    
     # Fin
     echo -e "${AMARILLO}"
-    echo -e "[*] git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
-    echo -e "[*] git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions"
     read -p "[?] Pulsa Cualquier tecla para Terminar..." basura
     echo -e "${Null}" 
     clear
